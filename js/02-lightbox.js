@@ -5,7 +5,6 @@ const galleryRef = document.querySelector('.gallery');
 const galleryMarkup = createGalleryItemsMarkUp(galleryItems);
 
 galleryRef.insertAdjacentHTML('beforeend', galleryMarkup);
-galleryRef.addEventListener('click', modalOnClick);
 
 function createGalleryItemsMarkUp(galleryItems) {
     
@@ -18,11 +17,4 @@ function createGalleryItemsMarkUp(galleryItems) {
     }).join('');
 }
 
-function modalOnClick(e) {
-    e.preventDefault();
-
-    if (!e.target.classList.contains('gallery__image')) {
-        return;
-    }
-    const lightbox = new SimpleLightbox('.gallery a', { captionsData: 'alt', captionsDelay: 250 });
-}
+const lightbox = new SimpleLightbox('.gallery a', { captionsData: 'alt', captionsDelay: 250 });
